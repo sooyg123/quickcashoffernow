@@ -87,7 +87,7 @@
 
   <section class="section form-section" id="form">
     <h2>Get Your Free, No-Obligation Cash Offer</h2>
-    <form action="https://hooks.zapier.com/hooks/catch/22974297/27f3v9w/" method="POST">
+    <form id="lead-form">
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="text" name="address" placeholder="Property Address" required />
       <input type="tel" name="phone" placeholder="Phone Number" required />
@@ -95,6 +95,21 @@
       <textarea name="message" placeholder="Tell us about your situation (optional)" rows="4"></textarea>
       <button type="submit" class="btn-primary">Get My Offer</button>
     </form>
+    <script>
+      document.getElementById("lead-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        fetch("https://hooks.zapier.com/hooks/catch/22974297/27f3v9w/", {
+          method: "POST",
+          body: data
+        }).then(() => {
+          window.location.href = "thankyou.html";
+        }).catch((err) => {
+          alert("There was an error. Please try again.");
+        });
+      });
+    </script>
   </section>
 
   <section class="section testimonials" id="testimonials">
