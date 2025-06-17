@@ -93,7 +93,15 @@
       <input type="tel" name="phone" placeholder="Phone Number" required />
       <input type="email" name="email" placeholder="Email Address" required />
       <textarea name="message" placeholder="Tell us about your situation (optional)" rows="4"></textarea>
-      <button type="submit" class="btn-primary">Get My Offer</button>
+      
+    <div class="form-check mt-3">
+        <input type="checkbox" class="form-check-input" id="consent" required>
+        <label class="form-check-label" for="consent">
+            I agree to the <a href="/terms.html" target="_blank">Terms of Service</a> and <a href="/privacy.html" target="_blank">Privacy Policy</a>.
+        </label>
+    </div>
+    <button type="submit"
+     class="btn-primary">Get My Offer</button>
     </form>
     <script>
       document.getElementById("lead-form").addEventListener("submit", function(e) {
